@@ -1,0 +1,17 @@
+machine:
+  environment:
+      JAVA_HOME: C:\Program Files (x86)\java\jdk8
+
+jobs:
+  test:
+    - run: mvn test
+
+workflows:
+  maven_test:
+    jobs:
+      - test
+
+## Customize deployment commands
+deployment:
+  staging:
+    branch: master

@@ -9,6 +9,7 @@ public class IPokedexFactoryTest {
 
 	@Test
 	public void test() {
+		
 	}
 
 }

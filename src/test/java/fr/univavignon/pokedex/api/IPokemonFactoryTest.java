@@ -35,16 +35,6 @@ public class IPokemonFactoryTest {
 			}
 			);	
 		Pokemon pm = test.createPokemon(0,613,64,4000,4);
-		System.out.println(pm.getName());
-		System.out.println(pm.getAttack());
-		System.out.println(pm.getDefense());
-		System.out.println(pm.getStamina());
-		System.out.println(pm.getCp());
-		System.out.println(pm.getHp());
-		System.out.println(pm.getDust());
-		System.out.println(pm.getCandy());
-		System.out.println(pm.getIv());
-		
 		assertEquals("Bulbizarre", pm.getName());
 		assertEquals(126, pm.getAttack());
 		assertEquals(126, pm.getDefense());
@@ -56,17 +46,6 @@ public class IPokemonFactoryTest {
 		assertEquals(56.0, pm.getIv(),0.1);
 		
 		Pokemon pm1 = test.createPokemon(133,2729,20,5000,4);
-		
-		System.out.println(pm1.getName());
-		System.out.println(pm1.getAttack());
-		System.out.println(pm1.getDefense());
-		System.out.println(pm1.getStamina());
-		System.out.println(pm1.getCp());
-		System.out.println(pm1.getHp());
-		System.out.println(pm1.getDust());
-		System.out.println(pm1.getCandy());
-		System.out.println(pm1.getIv());
-		
 		assertEquals("Aquali", pm1.getName());
 		assertEquals(186, pm1.getAttack());
 		assertEquals(168, pm1.getDefense());

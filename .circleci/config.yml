@@ -32,6 +32,7 @@ jobs:
           name: Test
           command: mvn test
       - codecov/upload:
+          #chemin couverture
           file: "couverture.xml"
 
 # Invoke jobs via workflows

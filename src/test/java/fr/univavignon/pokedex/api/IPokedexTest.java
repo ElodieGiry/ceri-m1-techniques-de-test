@@ -51,7 +51,7 @@ public class IPokedexTest {
         addPokemon();
         when(em.size()).thenReturn(pokedex.size());
         
-        assertEquals(em.size(), 2);
+        assertEquals(em.size(), 4);
     }
     
     /**

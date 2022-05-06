@@ -34,7 +34,7 @@ jobs:
       # Then run your tests!
       - run:
           name: Test
-          command: mvn test
+          command: mvn verify
       - codecov/upload:
           file: jacoco.exec
 

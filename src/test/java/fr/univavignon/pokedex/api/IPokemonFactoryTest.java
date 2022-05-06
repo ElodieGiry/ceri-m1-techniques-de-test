@@ -10,6 +10,7 @@ import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
 public class IPokemonFactoryTest {
+	
 	@Test
 	public void test() throws PokedexException {
 		IPokemonFactory test = Mockito.mock(IPokemonFactory.class);

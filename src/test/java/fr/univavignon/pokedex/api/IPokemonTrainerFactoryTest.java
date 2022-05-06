@@ -16,51 +16,16 @@ public class IPokemonTrainerFactoryTest {
 
 	@Test
 	public void createTrainer() {
-		/*
+		IPokemonTrainerFactory mockIPokemonTrainerFactory = Mockito.mock(IPokemonTrainerFactory.class);
 		
-        IPokemonTrainerFactory em = Mockito.mock(IPokemonTrainerFactory.class);
-        Team team = Team.valueOf("MYSTIC");
-        
-        IPokedexFactory pokedex = Mockito.mock(IPokedexFactory.class);
-        IPokemonMetadataProvider pokprovider = Mockito.mock(IPokemonMetadataProvider.class);
-        IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
-        
-        IPokedex poke = Mockito.mock(IPokedex.class);
-        
-        pokemonFactory.createPokemon(0, 613, 64, 4000, 4);
-        
-        pokedex.createPokedex(pokprovider, pokemonFactory);
-        
-        PokemonTrainer pt = em.createTrainer("Sacha", Team.valueOf("MYSTIC"), pokedex);
-        
-        System.out.println("------ PT -------");
-        System.out.println(pt);
-		System.out.println(pt.getName());
-		System.out.println(pt.getTeam());
-		System.out.println(pt.getPokedex());
-		System.out.println("------ PT -------");
-        
-        when(pt).thenAnswer(
-    			new Answer() {
-    				@Override
-    				public Object answer(InvocationOnMock invocation) throws PokedexException {
-    					Object[] args = invocation.getArguments();
-    					int entier = (int) args[0];
-    					if(pt.getName().equals("Sacha")){
-    						return new PokemonTrainer("Sacha", team.valueOf("MYSTIC"), poke);
-    					}
-    					else {
-    						return new PokedexException("Autre exception");
-    					}
-    				}
-    			}
-    			);
-        
-        assertEquals(pt.getName(), pt.getName());
-		//assertEquals("Sacha", pt.getName());
-		//assertEquals(Team.valueOf("MYSTIC"), pt.getTeam());
-		//assertEquals(pokedex, pt.getPokedex());
-		*/
+
+		IPokedexFactory iPokedexFactory = Mockito.mock(IPokedexFactory.class);
+		IPokedex iPokedex = iPokedexFactory.createPokedex(Mockito.mock(IPokemonMetadataProvider.class), Mockito.mock(IPokemonFactory.class));
+		PokemonTrainer pokemonTrainer = new PokemonTrainer("Test",Team.INSTINCT, iPokedex);
+		
+		when(mockIPokemonTrainerFactory.createTrainer("Test", Team.INSTINCT, iPokedexFactory)).thenReturn(pokemonTrainer);
+		
+		assertEquals(pokemonTrainer, mockIPokemonTrainerFactory.createTrainer("Test", Team.INSTINCT, iPokedexFactory));
     }	
     
 }

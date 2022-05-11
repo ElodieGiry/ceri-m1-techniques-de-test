@@ -128,7 +128,7 @@
                         </goals>
                         <configuration>
                             <sources>
-                                <!-- Les répertoires contenant les tests se placent ici -->
+                                <!-- les répertoires contenant les tests se placent ici -->
                                 <source>test</source>
                             </sources>
                         </configuration>

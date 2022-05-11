@@ -21,6 +21,7 @@
     <testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
     <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
     <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+	
 	<plugins>
 		 <plugin>
 		 <groupId>org.apache.maven.plugins</groupId>
@@ -139,12 +140,35 @@
 		        </execution>
 		    </executions>
 		 </plugin>
+		 
+		 <!-- Generate badges. -->
+		<plugin>
+			<groupId>com.github.bordertech.buildtools</groupId>
+			<artifactId>badger</artifactId>
+			<version>1.0.0</version>
+			<executions>
+				<execution>
+					<phase>post-site</phase>
+					<goals>
+						<goal>badges</goal>
+					</goals>
+					<configuration>
+						<skip>${badges.skip}</skip>
+						<outputDir>target/site/badges</outputDir>
+						<inputFiles>
+							<inputFile>target/checkstyle-result.xml</inputFile>
+						</inputFiles>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
 			
 		</plugins>
 	</pluginManagement>
   </build>
 	<reporting>
 	      <plugins>
+	     
 	        <plugin>
 	          <groupId>org.apache.maven.plugins</groupId>
 	          <artifactId>maven-checkstyle-plugin</artifactId>

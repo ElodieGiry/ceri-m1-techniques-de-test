@@ -141,6 +141,12 @@
 		    </executions>
 		 </plugin>
 		 
+		 <plugin>
+	          <groupId>org.apache.maven.plugins</groupId>
+	          <artifactId>maven-checkstyle-plugin</artifactId>
+	          <version>3.1.2</version>
+	        </plugin>
+		 
 		 <!-- Generate badges. -->
 		<plugin>
 			<groupId>com.github.bordertech.buildtools</groupId>
@@ -153,7 +159,6 @@
 						<goal>badges</goal>
 					</goals>
 					<configuration>
-						<skip>${badges.skip}</skip>
 						<outputDir>target/site/badges</outputDir>
 						<inputFiles>
 							<inputFile>target/checkstyle-result.xml</inputFile>
@@ -166,23 +171,6 @@
 		</plugins>
 	</pluginManagement>
   </build>
-	<reporting>
-	      <plugins>
-	     
-	        <plugin>
-	          <groupId>org.apache.maven.plugins</groupId>
-	          <artifactId>maven-checkstyle-plugin</artifactId>
-	          <version>3.1.2</version>
-	          <reportSets>
-	            <reportSet>
-	              <reports>
-	                <report>checkstyle</report>
-	              </reports>
-	            </reportSet>
-	          </reportSets>
-	        </plugin>
-	      </plugins>
-	    </reporting>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>

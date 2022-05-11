@@ -2,6 +2,30 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 #
+
+docs-deploy:
+    docker:
+      - image: node:8.10.0
+    steps:
+      - checkout
+      - attach_workspace:
+          at: docs/_build
+      - run:
+          name: Disable jekyll builds
+          command: touch docs/_build/html/.nojekyll
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email "elodie.giry@alumni.univ-avignon.fr"
+            git config user.name "ElodieGiry"
+      - add_ssh_keys:
+          fingerprints:
+            - "59:ad:fd:64:71:eb:81:01:6a:d7:1a:c9:0c:19:39:af"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist docs/apidocs
+
 orbs:
   codecov: codecov/codecov@3.2.2
 # Define a job to be invoked later in a workflow.

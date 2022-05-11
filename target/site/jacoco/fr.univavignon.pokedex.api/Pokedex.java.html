@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Pokedex.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mon-application</a> &gt; <a href="index.source.html" class="el_package">fr.univavignon.pokedex.api</a> &gt; <span class="el_source">Pokedex.java</span></div><h1>Pokedex.java</h1><pre class="source lang-java linenums">package fr.univavignon.pokedex.api;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class Pokedex implements IPokedex {
+	
+	IPokemonMetadataProvider metadataProvider;
+	IPokemonFactory pokemonFactory;
+	
+<span class="nc" id="L13">	public static List&lt;Pokemon&gt; listePokemon = new ArrayList&lt;Pokemon&gt;();</span>
+	
+<span class="nc" id="L15">	public Pokedex(IPokemonMetadataProvider metadataProvider, IPokemonFactory pokemonFactory) {</span>
+<span class="nc" id="L16">		Pokemon pokemon1 = new Pokemon(0,&quot;Bulbizarre&quot;,126,126,90,613,64,4000,4,56);</span>
+<span class="nc" id="L17">		Pokemon pokemon2 = new Pokemon(133,&quot;Aquali&quot;,186,168,260,2729,202,5000,4,100);</span>
+<span class="nc" id="L18">		listePokemon.add(pokemon1);</span>
+<span class="nc" id="L19">		listePokemon.add(pokemon2);</span>
+<span class="nc" id="L20">		this.metadataProvider = metadataProvider;</span>
+<span class="nc" id="L21">		this.pokemonFactory = pokemonFactory;</span>
+<span class="nc" id="L22">	}</span>
+
+	@Override
+	public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
+<span class="nc" id="L26">		return metadataProvider.getPokemonMetadata(index);</span>
+	}
+
+	@Override
+	public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
+<span class="nc" id="L31">		return pokemonFactory.createPokemon(index, cp, hp, dust, candy);</span>
+	}
+
+	@Override
+	public int size() {
+<span class="nc" id="L36">		return listePokemon.size();</span>
+	}
+
+	@Override
+	public int addPokemon(Pokemon pokemon) {
+<span class="nc" id="L41">		listePokemon.add(pokemon);</span>
+<span class="nc" id="L42">		return pokemon.getIndex();</span>
+	}
+
+	@Override
+	public Pokemon getPokemon(int id) throws PokedexException {
+<span class="nc" id="L47">		return listePokemon.get(id);</span>
+	}
+
+	@Override
+	public List&lt;Pokemon&gt; getPokemons() {
+<span class="nc" id="L52">		return listePokemon;</span>
+	}
+
+	@Override
+	public List&lt;Pokemon&gt; getPokemons(Comparator&lt;Pokemon&gt; order) {
+<span class="nc" id="L57">		Collections.sort(listePokemon,order);</span>
+<span class="nc" id="L58">		return listePokemon;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

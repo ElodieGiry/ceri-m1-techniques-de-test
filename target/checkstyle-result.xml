@@ -119,6 +119,8 @@
 <error line="56" column="42" severity="error" message="Le paramètre order devrait être final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
 <error line="57" column="46" severity="error" message="Il manque une espace après &apos;,&apos;." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
 </file>
+<file name="C:\Users\pgiry\TechniquesTest\TP\ceri-m1-techniques-de-test\src\main\java\fr\univavignon\pokedex\api\PokedexException.java">
+</file>
 <file name="C:\Users\pgiry\TechniquesTest\TP\ceri-m1-techniques-de-test\src\main\java\fr\univavignon\pokedex\api\PokedexFactory.java">
 <error line="5" column="1" severity="error" message="Le fichier contient des caractères de tabulation (ce n&apos;est que la première occurence)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
 <error line="5" column="9" severity="error" message="Classe &apos;PokedexFactory&apos; ressemble conçu pour extension (peut être sous-), mais la méthode&apos;createPokedex&apos; na pas javadoc qui explique comment le faire en toute sécurité. Si la classe est pas conçue pour envisager de faire la classe &apos;{0}&apos; finale ou de faire la méthode &apos;{1}&apos; annotation static/final/abstract/empty, ou lajout de permis pour la méthode." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>

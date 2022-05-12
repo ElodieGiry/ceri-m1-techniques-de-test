@@ -195,8 +195,7 @@
                 <configuration>
                 <source>8</source>
                 <detectJavaApiLink>false</detectJavaApiLink>
-                      <show>private</show>
-                      <nohelp>true</nohelp>
+                <reportOutputDirectory>docs</reportOutputDirectory>
                 </configuration>
               </plugin>
             

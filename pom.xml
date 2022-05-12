@@ -167,7 +167,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- Generate checkstyle badge. -->
+            <!-- generate checkstyle badge. -->
             <plugin>
                 <groupId>com.github.bordertech.buildtools</groupId>
                 <artifactId>badger</artifactId>

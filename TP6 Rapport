@@ -1,0 +1,3 @@
+Nous avons ajouté la classe RocketPokemonFactory qui implémente IPokemonFactory, dans le dossier main du projet.
+Nous avons donc également ajouté la classe IRocketPokemonFactoryTest lui correspondant, dans le dossier test.
+On constate qu'à présent, au build du projet, le pourcentage de couverture a augmenté car il est passé de 23% à 29%.
